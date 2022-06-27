@@ -1,14 +1,14 @@
-<h2>Log in</h2>
+<h2 class="mb-4 prose">Log in</h2>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo_frame: "_top" }) do |f| %>
+  <div class="form-control w-full max-w-xs">
+    <label class="label"><span class="label-text">Email</span></label>
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "block p-4 w-full max-w-xs text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
+  <div class="form-control w-full max-w-xs">
+    <label class="label"><span class="label-text">Password</span></label>
+    <%= f.password_field :password, autocomplete: "off", class: "block p-4 w-full max-w-xs text-gray-900 bg-gray-50 rounded-lg border border-gray-300 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" %>
   </div>
 
   <% if devise_mapping.rememberable? %>

@@ -1,4 +1,5 @@
 module.exports = {
+  plugins: [require("@tailwindcss/typography")],
   content: [
     './app/views/**/*.html.erb',
     './app/helpers/**/*.rb',
