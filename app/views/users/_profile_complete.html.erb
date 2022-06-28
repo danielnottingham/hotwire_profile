@@ -1,0 +1,23 @@
+
+<div class="grid grid-cols-2 grid-gap-4">
+  <%= turbo_frame_tag current_user do %>
+    <div class="p-4 mb-4 animatecss animatecss-headShake text-sm text-green-700 bg-green-100 rounded-lg dark:bg-green-200 dark:text-green-800" role="alert">
+      <span class="font-medium">Your profile is complete!</span>
+    </div>
+    <div>
+      Here's what I know about you:
+      <ul class="mt-4">
+        <li class="leading-8">Your name is <strong><%= current_user.name %>.</strong></li>
+        <li class="leading-8">You live in <strong><%= current_user.country %>.</strong></li>
+        <li class="leading-8">Your address is <strong><%= current_user.address %>, <%= current_user.city %>, <%= current_user.zip %></strong></li>
+        <li class="leading-8">Your email is <strong><%= current_user.email %></strong></li>
+        <li class="leading-8">About you:<br /><strong><%= current_user.bio %></strong></li>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <img class="ml-8 rounded w-44 h-44" src="<%= image_url 'default_avatar.png' %>" />
+  </div>
+</div>
+
